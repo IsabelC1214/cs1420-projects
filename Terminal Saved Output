@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Connection to cs1.seattleu.edu closed.
+Isas-MacBook-Pro:~ isabelcoloma$ ssh colomaisabel@cs1.seattleu.edu
+colomaisabel@cs1.seattleu.edu's password: 
+Last login: Sat Feb 15 11:41:20 2020 from c-24-19-90-43.hsd1.wa.comcast.net
+--------------------------------
+If you type wrong password 3 times, your account on this system will be locked for 5 minutes.
+Student File quota is 2GB.
+-----------------------------------------------
+CPSC 1420,CPSC 1430,CPSC 2430 and CPSC 1230 Students
+echo "alias g++='g++ -Wall -Werror -pedantic -std=c++11'" >>~/.bashrc
+-----------------------------------------------
+
+[colomaisabel@cs1 ~]$ cd cs1420
+[colomaisabel@cs1 cs1420]$ emacs p3.cpp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+File Edit Options Buffers Tools C++ Help                                        
+// Isabel Coloma                                                                
+// p3.cpp                                                                       
+// Process: random number for spin, adding spin to location, adjusting for      
+// chutes or ladders                                                            
+// Output: messages to user about location                                      
+
+#include <iostream>
+#include <cmath>
+#include <ctime>
+#include <cctype>
+
+using namespace std;
+
+string welcome();
+
+int spin();
+
+int checkLocation(int location);
+//returns value of chute or ladder at that location                             
+// return 0 if no chute or ladder                                               
+
+int takeTurn(int position, string name);
+//takes the turn for name                                                       
+//returns the new position                                                      
+//does its job, returns position and stores it,                                 
+
+void goodbye();
+
+const int END_SPACE = 100; // board size                                        
+const int MAX = 6; //spin MAX                                                   
+const int MIN = 1; //spin MIN                                                   
+const char YES = 'y'; //play again choice                                       
+const string COMP_NAME = "The Computer"; //computer name                        
+
+
+int main()
+{
+  int computerSpace = 0;
+  int playerSpace = 0;
+  char ans = YES;
+  string playerName;
+  bool computerTurn = false;
+
+  srand(time(0));
+
+  playerName = welcome();
+
+  while(tolower(ans) == YES){
+    if(computerTurn){
+      //cout << "It is the computer's turn" << endl << endl;                    
+      //cout << "Press enter to spin";                                          
+      //cin.get();                                                              
+-UU-:----F1  p3.cpp         Top (1,0)      (C++/l Abbrev) ----------------------
+Loading cc-langs...done
